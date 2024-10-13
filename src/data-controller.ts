@@ -10,21 +10,61 @@ function generateProductHTML(product: Product): string {
 }
 
 function renderProducts(prods: Product[]): void {
-    const main = document.getElementById("main-container");
+  const main = document.getElementById("main-container");
     if(main){
         //clear the container
         main.innerHTML = '';
         prods.forEach((prod)=>{
             //create new main for each item
             const prodMain = document.createElement('main');
-            prodMain.textContent = prod.name;
             prodMain.classList.add('prod');
-            //appends the new products to the container
+            //create element for name
+            const prodName = document.createElement('m1');
+            prodName.textContent = prod.name;
+            //create element for description
+            const prodDescription = document.createElement('m2');
+            prodDescription.textContent = prod.description;
+            //create element for price
+            const prodPrice = document.createElement('m3');
+            prodPrice.textContent = `Price: $${prod.price.toFixed(2)}`;
+            prodPrice.classList.add('price');
+            //rating
+            const prodRating = document.createElement('m4');
+            prodRating.textContent = `Rating: ${prod.rating.toFixed(2)}`;
+            prodRating.classList.add('rating')
+            //stock
+            const prodStock = document.createElement('m5');
+            prodStock.textContent = `Stock: ${prod.stock.toFixed(2)}`;
+            prodStock.classList.add('stock')
+
+            //image
+            const prodImage = document.createElement('img');
+            prodImage.src = prod.image;
+            prodImage.alt = `${prod.name} image`;
+            prodImage.width = 50;
+            prodImage.height = 50;
+
+            //category
+            const prodCategory = document.createElement('m6');
+            prodCategory.textContent = prod.category;
+
+            //append the elements to the item main
+            prodMain.appendChild(prodName);
+            prodMain.appendChild(prodDescription);
+            prodMain.appendChild(prodPrice);
+            prodMain.appendChild(prodRating);
+            prodMain.appendChild(prodStock);
+            prodMain.appendChild(prodImage);
+            prodMain.appendChild(prodCategory);
+
+
+            //append main to container
             main.appendChild(prodMain);
         });
         
-    }//
+    }
 }
+    
 
 function getByCategory(category: string): void {
     // your code
