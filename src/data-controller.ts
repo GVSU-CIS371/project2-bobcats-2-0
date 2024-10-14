@@ -84,7 +84,7 @@ function getByCategory(category: string): void {
     }   
     //loop through filtered products
     filtered.forEach((prod) => {
-        const prodMain = document.createElement('main');
+        const prodMain = document.createElement('div');
         prodMain.classList.add('prod');
 
         //name
@@ -107,7 +107,7 @@ function getByCategory(category: string): void {
         prodPrice.textContent = `Price: $${prod.price.toFixed(2)}`;
 
         //rating 
-        const prodRating = document.createElement('div');
+        const prodRating = document.createElement('span');
         prodPrice.textContent = `Rating: ${prod.rating.toFixed(2)}`;
 
         //stock
@@ -200,5 +200,6 @@ function getByRating(minRating: number): void {
         main.appendChild(prodMain);
     })
 }
+
 
 export { renderProducts, getByCategory, getByRating };
