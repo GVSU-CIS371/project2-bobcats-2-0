@@ -153,7 +153,7 @@ function getByRating(minRating: number): void {
     }   
     //loop through filtered products
     filtered.forEach((prod) => {
-        const prodMain = document.createElement('main');
+        const prodMain = document.createElement('div');
         prodMain.classList.add('prod');
 
         //name
