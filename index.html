@@ -48,8 +48,8 @@
         getByCategory('Groceries');
         });
 
-        document.getElementByRating(rating)?.addEventLister('click', () => {
-          getByRating(rating >= 4.5)
+        document.getElementById('bestSeller')?.addEventListener('click', () => {
+          getByRating(4.5)
         })
 
       </script>

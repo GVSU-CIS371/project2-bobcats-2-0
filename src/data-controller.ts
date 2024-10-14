@@ -108,11 +108,11 @@ function getByCategory(category: string): void {
 
         //rating 
         const prodRating = document.createElement('span');
-        prodPrice.textContent = `Rating: ${prod.rating.toFixed(2)}`;
+        prodRating.textContent = `Rating: ${prod.rating.toFixed(2)}`;
 
         //stock
         const prodStock = document.createElement('div');
-        prodPrice.textContent = `Stock: $${prod.stock.toFixed(2)}`;
+        prodStock.textContent = `Stock: ${prod.stock.toFixed(2)}`;
 
         //category
         const prodCategory =  document.createElement('div');
@@ -143,7 +143,7 @@ function getByRating(minRating: number): void {
     //clear the container
     main.innerHTML = '';
     //filter the products based on their rating
-    const filtered = products.filter(prods => prods.rating === minRating);
+    const filtered = products.filter(prods => prods.rating >= minRating);
     //check if there were any products
     if(filtered.length === 0){
         const noProducts = document.createElement('a');
@@ -177,11 +177,11 @@ function getByRating(minRating: number): void {
 
         //rating 
         const prodRating = document.createElement('div');
-        prodPrice.textContent = `Rating: ${prod.rating.toFixed(2)}`;
+        prodRating.textContent = `Rating: ${prod.rating.toFixed(2)}`;
 
         //stock
         const prodStock = document.createElement('div');
-        prodPrice.textContent = `Stock: $${prod.stock.toFixed(2)}`;
+        prodStock.textContent = `Stock: ${prod.stock.toFixed(2)}`;
 
         //category
         const prodCategory =  document.createElement('div');
